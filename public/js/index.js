@@ -30,9 +30,7 @@ $(document).ready(function () {
 
 function onYouTubeIframeAPIReady() {
   var ready = false
-
-
-
+  
   player = new YT.Player('player', {
     height: '390',
     width: '640',
@@ -65,10 +63,6 @@ function onYouTubeIframeAPIReady() {
 
   function difference (lastVal, currentVal) {
     return Math.abs(Math.abs(currentVal) - Math.abs(lastVal))
-  }
-
-  function changeSeek (value) {
-
   }
 
 }

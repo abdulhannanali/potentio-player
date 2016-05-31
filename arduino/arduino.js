@@ -18,7 +18,6 @@ module.exports = function (io) {
 		})
 
 		potentiometer.on("data", function () {
-			console.log(this.raw)
 			io.sendPot(this.raw)		
 		})
 	})
