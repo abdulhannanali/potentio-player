@@ -1,7 +1,6 @@
 {
   "name": "potentio-player",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,5 +21,7 @@
     "express": "^4.13.4",
     "johnny-five": "^0.9.51",
     "socket.io": "^1.4.6"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

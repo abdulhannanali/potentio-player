@@ -5,10 +5,11 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
-var socket = io()
 var videoInput;
 var videoBtn;
+var selectedFunction;
 
+var socket = io()
 var range_val = $("#range_val")
 var raw_val = $("#raw_val")
 
@@ -30,7 +31,7 @@ $(document).ready(function () {
 
 function onYouTubeIframeAPIReady() {
   var ready = false
-  
+
   player = new YT.Player('player', {
     height: '390',
     width: '640',
@@ -58,11 +59,20 @@ function onYouTubeIframeAPIReady() {
       }  
     })
 
+    socket.on("pht", function (photoVal) {
+      controlVolume(photoVal)
+    })
 
   }
 
   function difference (lastVal, currentVal) {
     return Math.abs(Math.abs(currentVal) - Math.abs(lastVal))
+  }
+
+  function controlVolume (potVal) {
+    var volRange = potVal.map(0, 1023, 0, 100)
+
+    player.setVolume(volRange)
   }
 
 }
